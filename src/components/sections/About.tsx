@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Award, Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import Image from "next/image";
 
 const timelineData = [
   {
@@ -52,9 +53,11 @@ export const About = () => {
         >
           <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl rounded-[3rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 glass shadow-2xl">
-            <img 
+            <Image
               src="/profile.jpg" 
               alt="P.L.N. Chaitanya Bhagyakiran" 
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-110" 
             />
           </div>
@@ -89,7 +92,7 @@ export const About = () => {
           </p>
           
           <div className="flex pt-4">
-            <Link href="/resume">
+            <Link href="/resumes.pdf" target="_blank" rel="noreferrer">
               <Button variant="outline" className="rounded-full px-8 group">
                 Detailed Resume <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>

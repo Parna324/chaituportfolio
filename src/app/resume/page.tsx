@@ -1,13 +1,19 @@
 "use client";
 
 import React from "react";
-import { Printer, ArrowLeft, Github, Linkedin, Mail, Phone, Globe } from "lucide-react";
+import { Printer, ArrowLeft, Github, Linkedin, Mail, Phone, Globe, Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
 export default function ResumePage() {
+  const resumePdfPath = "/resumes.pdf";
+
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleOpenPdf = () => {
+    window.open(resumePdfPath, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -21,6 +27,9 @@ export default function ResumePage() {
             </Button>
           </Link>
           <div className="flex gap-3">
+            <Button onClick={handleOpenPdf} variant="outline" className="gap-2">
+              <Download size={16} /> Open Original PDF
+            </Button>
             <Button onClick={handlePrint} className="gap-2 bg-primary hover:bg-primary/90 text-white">
               <Printer size={16} /> Print / Save PDF
             </Button>

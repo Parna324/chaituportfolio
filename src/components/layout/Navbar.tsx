@@ -52,7 +52,7 @@ export const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link href="/resume">
+          <Link href="/resumes.pdf" target="_blank" rel="noreferrer">
             <Button variant="glass" size="sm" className="border-white/20">
               Resume
             </Button>
@@ -99,7 +99,7 @@ export const Navbar = () => {
                   <Mail size={20} className="text-foreground/60 hover:text-primary cursor-pointer" />
                 </a>
               </div>
-              <Link href="/resume" onClick={() => setIsOpen(false)}>
+              <Link href="/resumes.pdf" target="_blank" rel="noreferrer" onClick={() => setIsOpen(false)}>
                 <Button variant="primary" className="w-full rounded-full">
                   Resume
                 </Button>

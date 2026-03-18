@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { HeroScene } from "@/components/3d/HeroScene";
 import { Button } from "@/components/ui/Button";
-import Link from "next/link";
 import { ChevronRight, Download } from "lucide-react";
 
 export const Hero = () => {
@@ -61,12 +60,12 @@ export const Hero = () => {
                 <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Button>
             </a>
-            <Link href="/resume">
+            <a href="/resumes.pdf" target="_blank" rel="noreferrer">
               <Button variant="outline" size="lg" className="rounded-full px-8">
                 Download CV
                 <Download className="ml-2" size={20} />
               </Button>
-            </Link>
+            </a>
           </div>
         </motion.div>
 
