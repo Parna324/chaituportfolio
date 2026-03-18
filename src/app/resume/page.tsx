@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { FileText, Download, Printer, ArrowLeft, Github, Linkedin, Mail, Phone, Globe } from "lucide-react";
+import { Printer, ArrowLeft, Github, Linkedin, Mail, Phone, Globe } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 

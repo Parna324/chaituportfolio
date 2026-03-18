@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, ExternalLink, BadgeCheck, Trophy, Target } from "lucide-react";
+import { Award, ExternalLink, Trophy, Target } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const certificates = [

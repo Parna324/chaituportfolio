@@ -3,6 +3,13 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial, Float } from "@react-three/drei";
+import type { Group } from "three";
+
+const particlePositions: [number, number, number][] = Array.from({ length: 150 }, () => [
+  (Math.random() - 0.5) * 20,
+  (Math.random() - 0.5) * 20,
+  (Math.random() - 0.5) * 20,
+]);
 
 const AnimatedSphere = () => {
   return (
@@ -23,23 +30,20 @@ const AnimatedSphere = () => {
 };
 
 const BackgroundParticles = () => {
-  const points = useRef<any>(null);
+  const points = useRef<Group>(null);
 
   useFrame((state) => {
+    if (!points.current) return;
     points.current.rotation.y = state.clock.getElapsedTime() * 0.05;
     points.current.rotation.x = state.clock.getElapsedTime() * 0.02;
   });
 
   return (
     <group ref={points}>
-      {Array.from({ length: 150 }).map((_, i) => (
+      {particlePositions.map((position, i) => (
         <mesh
           key={i}
-          position={[
-            (Math.random() - 0.5) * 20,
-            (Math.random() - 0.5) * 20,
-            (Math.random() - 0.5) * 20,
-          ]}
+          position={position}
         >
           <sphereGeometry args={[0.02, 8, 8]} />
           <meshStandardMaterial color="#ec4899" transparent opacity={0.6} />

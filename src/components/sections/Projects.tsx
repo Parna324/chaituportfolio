@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Layers, Search, Code, Globe } from "lucide-react";
+import { ExternalLink, Github, Layers } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
-const categories = ["All", "Web App", "UI/UX", "Mobile", "Blockchain"];
+const categories = ["All", "Cloud Architecture", "Full-Stack Web App"];
 
 const projectsData = [
   {
@@ -63,7 +64,7 @@ export const Projects = () => {
 
       <motion.div layout className="grid md:grid-cols-2 gap-8">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, i) => (
+          {filteredProjects.map((project) => (
             <motion.div
               key={project.title}
               layout
@@ -75,18 +76,24 @@ export const Projects = () => {
             >
               {/* Image Container */}
               <div className="h-64 overflow-hidden relative">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <Button variant="glass" size="sm" className="rounded-full">
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      <Button variant="glass" size="sm" className="rounded-full">
                         <Github size={18} className="mr-2" /> Code
-                    </Button>
-                    <Button variant="primary" size="sm" className="rounded-full">
+                      </Button>
+                    </a>
+                    <a href={project.link} target="_blank" rel="noreferrer">
+                      <Button variant="primary" size="sm" className="rounded-full">
                         <ExternalLink size={18} className="mr-2" /> Demo
-                    </Button>
+                      </Button>
+                    </a>
                 </div>
               </div>
 

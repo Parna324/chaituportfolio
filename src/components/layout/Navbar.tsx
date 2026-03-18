@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 
@@ -12,7 +12,6 @@ const navLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Blog", href: "#blog" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -100,11 +99,11 @@ export const Navbar = () => {
                   <Mail size={20} className="text-foreground/60 hover:text-primary cursor-pointer" />
                 </a>
               </div>
-              <a href="#contact" onClick={() => setIsOpen(false)}>
+              <Link href="/resume" onClick={() => setIsOpen(false)}>
                 <Button variant="primary" className="w-full rounded-full">
                   Resume
                 </Button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

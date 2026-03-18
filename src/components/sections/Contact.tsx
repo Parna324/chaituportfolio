@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Phone, MessageSquare, ArrowRight } from "lucide-react";
+import { Send, Mail, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export const Contact = () => {
@@ -28,7 +28,7 @@ export const Contact = () => {
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto space-y-16">
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <h2 className="text-primary font-mono tracking-[0.3em] uppercase text-sm">Get In Touch</h2>
-        <h3 className="text-4xl md:text-6xl font-black text-white italic">Let's Build Something <span className="text-primary">Legendary</span></h3>
+        <h3 className="text-4xl md:text-6xl font-black text-white italic">Let&apos;s Build Something <span className="text-primary">Legendary</span></h3>
         <p className="text-foreground/60 text-lg">
           Have a project in mind or just want to say hi? My inbox is always open.
         </p>
